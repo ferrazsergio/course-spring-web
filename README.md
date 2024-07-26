@@ -9,7 +9,7 @@ Este projeto implementa um serviço web usando Spring Boot e JPA/Hibernate. Ele 
 - Deployment no Heroku
 
 ## Tecnologias Utilizadas
-- Java 17
+- Java 21
 - Spring Boot
 - JPA/Hibernate
 - H2 Database
@@ -244,4 +244,3 @@ jwt.expiration=${JWT_EXPIRATION}
 
 ## Licença
 Este projeto está licenciado sob a licença MIT.
->>>>>>> 6e9bb354a2d80d4f46ef840f8f6d9951d6ea22bb
