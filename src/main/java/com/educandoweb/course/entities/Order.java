@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -33,15 +35,20 @@ public class Order implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
-
+	
+	@Enumerated(EnumType.STRING)
+	private OrderStatus orderStatus;
+	
 	public Order() {
 	}
 
-	public Order(Long id, Instant date, User client) {
+	public Order(Long id, Instant date,OrderStatus orderStatus, User client) {
 		this.id = id;
 		this.date = date;
+		this.orderStatus = orderStatus;
 		this.client = client;
 	}
+
 
 	@Override
 	public int hashCode() {
