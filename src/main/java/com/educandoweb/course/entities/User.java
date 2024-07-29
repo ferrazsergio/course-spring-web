@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "TB_USER")  // Certifique-se de que o nome corresponde ao do banco de dados
+@Table(name = "tb_user")  
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
