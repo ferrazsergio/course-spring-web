@@ -42,6 +42,7 @@ public class Order implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus;
 	
+	
 	@OneToMany(mappedBy = "id.order")
 	private Set<OrderItem> items = new HashSet<>();
 	
