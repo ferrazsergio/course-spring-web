@@ -30,6 +30,7 @@ public class TestConfig implements CommandLineRunner {
 	private final CategoryRepository categoryRepository;
 	private final ProductRepository productRepository;
 	private final OrderItemRepository orderItemRepository;
+	
 	@Autowired
 	public TestConfig(UserRepository userRepository,OrderRepository orderRepository,CategoryRepository categoryRepository,ProductRepository productRepository,OrderItemRepository orderItemRepository) {
 		this.userRepository = userRepository;
