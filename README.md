@@ -1,12 +1,12 @@
 # Spring Boot JPA/Hibernate Web Services
 
 ## Descrição
-Este projeto implementa um serviço web usando Spring Boot e JPA/Hibernate. Ele cobre a criação de um modelo de domínio, estruturação das camadas lógicas, configuração de banco de dados de teste e desenvolvimento, operações CRUD, tratamento de exceções e deployment no Heroku.
+Este projeto implementa um serviço web usando Spring Boot e JPA/Hibernate. Ele cobre a criação de um modelo de domínio, estruturação das camadas lógicas, configuração de banco de dados de teste e desenvolvimento, operações CRUD, tratamento de exceções e deployment no Railway
 
 ## Funcionalidades
 - Criar, Recuperar, Atualizar e Deletar entidades (CRUD)
 - Tratamento de exceções
-- Deployment no Heroku
+- Deployment no Railway
 
 ## Tecnologias Utilizadas
 - Java 21
@@ -14,7 +14,7 @@ Este projeto implementa um serviço web usando Spring Boot e JPA/Hibernate. Ele 
 - JPA/Hibernate
 - H2 Database
 - PostgreSQL
-- Heroku
+- Railway
 
 ## Configuração do Projeto
 ### Dependências
@@ -63,17 +63,26 @@ spring.jpa.properties.hibernate.format_sql=true
 
 #### application-dev.properties
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/springboot_course
-spring.datasource.username=postgres
-spring.datasource.password=1234567
+spring.datasource.url=jdbc:postgresql://localhost:5432/teste
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+spring.datasource.hikari.allow-pool-suspension=true
 
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
 jwt.secret=MYJWTSECRET
 jwt.expiration=3600000
+
+server.port=8081
+
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+spring.jpa.properties.hibernate.boot.allow_jdbc_metadata_access=false
+
+spring.jpa.hibernate.ddl-auto=update
+spring.sql.init.mode=never
 ```
 
 #### application-prod.properties
@@ -94,7 +103,6 @@ jwt.expiration=${JWT_EXPIRATION}
 - **Database Configuration**: Configuração do banco de dados de teste (H2) e perfil de desenvolvimento (PostgreSQL).
 - **CRUD Operations**: Implementação das operações de Create, Retrieve, Update, Delete.
 - **Exception Handling**: Tratamento de exceções nas operações CRUD.
-- **Deployment**: Instruções para deploy no Heroku.
 
 ## Diagrama do Modelo de Domínio
 ![Domain Model](https://github.com/ferrazsergio/course-springboot-3-java-21/blob/main/img/diagrama.png)
