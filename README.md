@@ -99,20 +99,13 @@ jwt.expiration=${JWT_EXPIRATION}
 ## Diagrama do Modelo de Domínio
 ![Domain Model](https://github.com/ferrazsergio/course-springboot-3-java-21/blob/main/img/diagrama.png)
 
-## Deploy no Heroku
+## Deploy no Railway
 ### Passos
-1. Crie uma conta no Heroku e uma nova aplicação.
-2. Provisione o PostgreSQL no dashboard do Heroku.
+1. Crie uma conta no Railway e uma nova aplicação.
+2. Provisione o PostgreSQL no dashboard do Railway
 3. Adicione as variáveis de configuração necessárias (DATABASE_URL, JWT_SECRET, JWT_EXPIRATION).
 4. Atualize o arquivo `application-prod.properties` com as variáveis de configuração.
-5. Faça o deploy usando o Heroku CLI:
-    ```sh
-    heroku login
-    heroku git:remote -a <nome-da-sua-aplicacao>
-    git add .
-    git commit -m "Deploy app to Heroku"
-    git push heroku main
-    ```
+5. Faça o deploy.
 
 ## Links Úteis
 - [Documentação do Spring Boot](https://spring.io/projects/spring-boot)
